@@ -24,8 +24,11 @@ public class Supervisor implements IVacationApprover
         }
         else
         {
-            System.out.println(request.getEmployee().getFirstName() + ", your vacation request has been forwarded");
-            approver.approveVacation(request);
+            if (approver != null)
+            {
+                System.out.println(request.getEmployee().getFirstName() + ", your vacation request has been forwarded");
+                approver.approveVacation(request);
+            }
         }
     }
 }
